@@ -70,7 +70,7 @@ const ContactFooter = () => {
                         <div className="flex gap-4">
                             <SocialLink icon={Facebook} href="#" />
                             <SocialLink icon={Instagram} href="#" />
-                            <SocialLink icon={Youtube} href="#" />
+                            <SocialLink icon={Youtube} href="https://www.youtube.com/channel/UCv6NRsMslWfI-1jhFy5NF-g/" />
                         </div>
                     </div>
 
@@ -129,6 +129,19 @@ const ContactFooter = () => {
                                 <div>
                                     <p className="font-bold text-sm">Waystream</p>
                                     <p className="text-[10px] text-slate-500">Live audio streaming</p>
+                                </div>
+                            </a>
+
+                            <a
+                                href="https://www.youtube.com/channel/UCv6NRsMslWfI-1jhFy5NF-g/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 text-slate-400 hover:text-amber-500 transition-colors"
+                            >
+                                <Youtube size={20} className="text-amber-500" />
+                                <div>
+                                    <p className="font-bold text-sm">Official YouTube</p>
+                                    <p className="text-[10px] text-slate-500">Video teachings & archives</p>
                                 </div>
                             </a>
                         </div>

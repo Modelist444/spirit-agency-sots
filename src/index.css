@@ -81,6 +81,36 @@
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 10'%3E%3Cpath d='M0 5 Q 50 0, 100 5 T 200 5' stroke='%23FCD34D' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat;
     background-size: 100% 100%;
   }
+
+  /* ========================================
+     SERMON CARD SHARED STYLES
+     All sermon titles MUST use these classes
+     ======================================== */
+  .sermon-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .sermon-card-preacher {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgba(251, 191, 36, 0.8);
+  }
+
+  .sermon-card-tag {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 4px 12px;
+    background: rgba(30, 41, 59, 0.8);
+    color: rgb(203, 213, 225);
+    border-radius: 9999px;
+    border: 1px solid rgba(71, 85, 105, 0.5);
+  }
 }
 
 

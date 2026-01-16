@@ -46,7 +46,7 @@ const About = () => {
                     <div className="h-2 w-48 bg-gradient-to-r from-amber-400 to-orange-600 mx-auto rounded-full shadow-lg" />
 
                     <p className="mt-12 text-xl md:text-3xl text-slate-300 leading-relaxed italic font-medium max-w-4xl mx-auto">
-                        "A Kingdom prophetic and apostolic equipping platform. Here, Faith, Prophecy, and Miracles are our heritage, and God's presence is our greatest treasure."
+                        "New Wine School of the Spirit is a Kingdom prophetic and apostolic equipping platform, located in Jos Plateau State, Nigeria. It is structured with a prophetic emphasis for times and seasons, cutting edge messages and outreach to birth the current moves of the Holy Spirit in the body of Christ, in geo-spiritual territories and in a new generation. Coordinated by Babs Adewunmi."
                     </p>
                 </div>
 

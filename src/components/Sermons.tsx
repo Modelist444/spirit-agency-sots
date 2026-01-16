@@ -50,51 +50,57 @@ const Sermons = () => {
     const sermons = [
         {
             title: "Trading floors in the spirit",
-            preacher: "Apostle Babs Adewumi",
+            preacher: "Apostle Babs Adewunmi",
             date: "Jan 14, 2024",
             duration: "1h 12m",
             tags: ["Holy Spirit", "Spiritual Growth"],
-            image: "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=400&h=250&fit=crop"
+            image: "https://img.youtube.com/vi/BfkjnxHoaCI/maxresdefault.jpg",
+            videoUrl: "https://youtu.be/BfkjnxHoaCI?si=1PVjvO3ORmXuct2v"
         },
         {
-            title: "The Power of Prayer",
-            preacher: "Pastor Mercy Ali",
+            title: "The Power Of Prayer",
+            preacher: "Apostle Babs Adewunmi",
             date: "Jan 07, 2024",
             duration: "58m",
             tags: ["Prayer", "Faith"],
-            image: "https://images.unsplash.com/photo-1507692049790-de58290a4334?w=400&h=250&fit=crop"
+            image: "https://img.youtube.com/vi/HeK4pi9UJds/maxresdefault.jpg",
+            videoUrl: "https://youtu.be/HeK4pi9UJds?si=wDWDjIXM8XjGm3Rv"
         },
         {
             title: "Understanding Grace",
-            preacher: "Pastor Gabriel Lean",
+            preacher: "Apostle Babs Adewunmi",
             date: "Dec 31, 2023",
             duration: "1h 05m",
             tags: ["Grace", "Salvation"],
-            image: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=400&h=250&fit=crop"
+            image: "https://img.youtube.com/vi/arUzp_nTT1c/maxresdefault.jpg",
+            videoUrl: "https://youtu.be/arUzp_nTT1c?si=MTkysGXARR322Sbn"
         },
         {
             title: "The Anointing Within",
-            preacher: "Apostle Babs Adewumi",
+            preacher: "Apostle Babs Adewunmi",
             date: "Dec 24, 2023",
             duration: "1h 20m",
             tags: ["Anointing", "Holy Spirit"],
-            image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=400&h=250&fit=crop"
+            image: "https://img.youtube.com/vi/GZspjZ7i-p0/maxresdefault.jpg",
+            videoUrl: "https://youtu.be/GZspjZ7i-p0?si=CQNk8NHvSalfuXAp"
         },
         {
             title: "Walking in Victory",
-            preacher: "Pastor Gaius Danauta",
+            preacher: "Apostle Babs Adewunmi",
             date: "Dec 17, 2023",
             duration: "52m",
             tags: ["Victory", "Overcoming"],
-            image: "https://images.unsplash.com/photo-1478147427282-58a87a120781?w=400&h=250&fit=crop"
+            image: "https://img.youtube.com/vi/DftCov46sJM/maxresdefault.jpg",
+            videoUrl: "https://www.youtube.com/live/DftCov46sJM?si=kqS5F3MVImL9kNBx"
         },
         {
             title: "Divine Encounters",
-            preacher: "Prophet Emma Njoku",
+            preacher: "Apostle Babs Adewunmi",
             date: "Dec 10, 2023",
             duration: "1h 08m",
             tags: ["Presence of God", "Worship"],
-            image: "https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=400&h=250&fit=crop"
+            image: "https://img.youtube.com/vi/gZeXk9n5PFA/maxresdefault.jpg",
+            videoUrl: "https://youtu.be/gZeXk9n5PFA?si=WKew-zTWyz7IMQh2"
         }
     ];
 
@@ -128,64 +134,71 @@ const Sermons = () => {
                             index={i}
                             className="group"
                         >
-                            {/* Glassmorphism Card */}
-                            <div className="h-full bg-slate-900/60 backdrop-blur-xl rounded-2xl overflow-hidden border border-slate-700/50 hover:border-amber-500/40 transition-all duration-500 relative">
-                                {/* Gradient overlay for depth */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <a
+                                href={sermon.videoUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block h-full transition-transform duration-500 hover:scale-[1.01]"
+                            >
+                                {/* Glassmorphism Card */}
+                                <div className="h-full bg-slate-900/60 backdrop-blur-xl rounded-2xl overflow-hidden border border-slate-700/50 hover:border-amber-500/40 transition-all duration-500 relative">
+                                    {/* Gradient overlay for depth */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                                {/* Thumbnail */}
-                                <div className="relative h-48 overflow-hidden">
-                                    <img
-                                        src={sermon.image}
-                                        alt={sermon.title}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent" />
+                                    {/* Thumbnail */}
+                                    <div className="relative h-48 overflow-hidden">
+                                        <img
+                                            src={sermon.image}
+                                            alt={sermon.title}
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent" />
 
-                                    {/* Play button */}
-                                    <motion.button
-                                        className="absolute inset-0 flex items-center justify-center"
-                                        initial={{ opacity: 0 }}
-                                        whileHover={{ opacity: 1 }}
-                                    >
-                                        <motion.div
-                                            className="bg-amber-500/90 backdrop-blur-sm p-4 rounded-full shadow-lg shadow-amber-500/30"
-                                            whileHover={{ scale: 1.1 }}
-                                            whileTap={{ scale: 0.95 }}
+                                        {/* Play button */}
+                                        <motion.button
+                                            className="absolute inset-0 flex items-center justify-center"
+                                            initial={{ opacity: 0 }}
+                                            whileHover={{ opacity: 1 }}
                                         >
-                                            <Play fill="white" className="text-white ml-0.5" size={24} />
-                                        </motion.div>
-                                    </motion.button>
-                                </div>
-
-                                <div className="p-5 relative z-10">
-                                    {/* Tags */}
-                                    <div className="flex flex-wrap gap-2 mb-3">
-                                        {sermon.tags.map((tag, j) => (
-                                            <span
-                                                key={j}
-                                                className="px-3 py-1 text-xs font-medium bg-slate-800/80 backdrop-blur-sm text-slate-300 rounded-full border border-slate-600/50 group-hover:border-amber-500/30 transition-colors"
+                                            <motion.div
+                                                className="bg-amber-500/90 backdrop-blur-sm p-4 rounded-full shadow-lg shadow-amber-500/30"
+                                                whileHover={{ scale: 1.1 }}
+                                                whileTap={{ scale: 0.95 }}
                                             >
-                                                {tag}
-                                            </span>
-                                        ))}
+                                                <Play fill="white" className="text-white ml-0.5" size={24} />
+                                            </motion.div>
+                                        </motion.button>
                                     </div>
 
-                                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-amber-300 transition-colors duration-300">
-                                        {sermon.title}
-                                    </h3>
-                                    <p className="text-amber-400/80 text-sm mb-3 font-medium">
-                                        {sermon.preacher}
-                                    </p>
-                                    <div className="flex justify-between text-slate-500 text-xs uppercase tracking-wider font-medium">
-                                        <span>{sermon.date}</span>
-                                        <span className="text-amber-500/60">{sermon.duration}</span>
+                                    <div className="p-5 relative z-10">
+                                        {/* Tags */}
+                                        <div className="flex flex-wrap gap-2 mb-3">
+                                            {sermon.tags.map((tag, j) => (
+                                                <span
+                                                    key={j}
+                                                    className="sermon-card-tag backdrop-blur-sm group-hover:border-amber-500/30 transition-colors"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        <h3 className="sermon-card-title group-hover:text-amber-300 transition-colors duration-300">
+                                            {sermon.title}
+                                        </h3>
+                                        <p className="sermon-card-preacher mb-3">
+                                            {sermon.preacher}
+                                        </p>
+                                        <div className="flex justify-between text-slate-500 text-xs uppercase tracking-wider font-medium">
+                                            <span>{sermon.date}</span>
+                                            <span className="text-amber-500/60">{sermon.duration}</span>
+                                        </div>
                                     </div>
+
+                                    {/* Bottom glow effect on hover */}
+                                    <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 </div>
-
-                                {/* Bottom glow effect on hover */}
-                                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            </div>
+                            </a>
                         </FeatureCard>
                     ))}
                 </div>
