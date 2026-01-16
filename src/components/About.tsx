@@ -1,3 +1,6 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
 // About section component
 const About = () => {
     const stories = [
@@ -22,18 +25,24 @@ const About = () => {
     ];
 
     return (
-        <section id="about" className="relative z-20 bg-slate-950 py-24">
+        <section id="about" className="relative z-20 bg-slate-950 py-24 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-24">
                     <p className="text-amber-600 font-semibold tracking-widest uppercase text-xs mb-4">
                         Who We Are
                     </p>
-                    <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tight text-white">
-                        Know more{' '}
+                    <motion.h2
+                        initial={{ opacity: 0, x: -100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tight text-white"
+                    >
+                        SPIRIT{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-600 to-amber-500">
-                            About Us
+                            AGENCY
                         </span>
-                    </h2>
+                    </motion.h2>
                     <div className="h-2 w-48 bg-gradient-to-r from-amber-400 to-orange-600 mx-auto rounded-full shadow-lg" />
 
                     <p className="mt-12 text-xl md:text-3xl text-slate-300 leading-relaxed italic font-medium max-w-4xl mx-auto">
