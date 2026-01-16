@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Play, Heart, Send, ChevronDown } from 'lucide-react';
+import { Calendar, Play, Heart, Send, ChevronDown, Video } from 'lucide-react';
 
 const Hero = () => {
     const scrollToSection = (section: string) => {
@@ -83,11 +83,21 @@ const Hero = () => {
                     className="flex flex-wrap justify-center gap-3 md:gap-4 pt-4"
                     style={{ animation: 'fadeInUp 1s ease-out 1.2s both' }}
                 >
+                    <a
+                        href="https://us02web.zoom.us/j/4493997238?pwd=N2p2eXl3ZUFGdUpXS2k1dXUwZHNJZz09"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 flex items-center gap-2 font-bold bg-white text-slate-900 shadow-xl hover:bg-amber-400 hover:scale-105 active:scale-95 border-2 border-white/20"
+                    >
+                        <Video size={20} className="group-hover:animate-pulse" />
+                        <span>JOIN LIVE NOW</span>
+                    </a>
+
                     {[
-                        { icon: Calendar, text: 'Join Us', action: 'events', primary: true },
-                        { icon: Play, text: 'Watch Sermons', action: 'sermons', primary: false },
+                        { icon: Calendar, text: 'Events', action: 'events', primary: true },
+                        { icon: Play, text: 'Sermons', action: 'sermons', primary: false },
                         { icon: Heart, text: 'Testimonies', action: 'testimonies', primary: false },
-                        { icon: Send, text: 'Prayer Request', action: 'prayer', primary: false }
+                        { icon: Send, text: 'Prayer', action: 'prayer', primary: false }
                     ].map((btn, i) => (
                         <button
                             key={i}

@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, Youtube, Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Mail, MapPin, Phone, ArrowRight, Video, MessageSquare, Radio } from 'lucide-react';
 
 const SocialLink = ({ icon: Icon, href }: { icon: any, href: string }) => {
     return (
@@ -44,7 +43,7 @@ const ContactFooter = () => {
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="grid md:grid-cols-12 gap-12 mb-20">
                     {/* Brand & Info */}
-                    <div className="md:col-span-5 space-y-8">
+                    <div className="md:col-span-4 space-y-8">
                         <div>
                             <h2 className="text-3xl font-black text-white mb-2">SPIRIT AGENCY | <span className="text-amber-500">SOTS</span></h2>
                             <p className="text-slate-500 text-sm font-medium tracking-wide">Faith • Prophecy • Miracles</p>
@@ -76,7 +75,7 @@ const ContactFooter = () => {
                     </div>
 
                     {/* Quick Link Columns */}
-                    <div className="md:col-span-3 space-y-6">
+                    <div className="md:col-span-2 space-y-6">
                         <h3 className="text-white font-bold uppercase tracking-widest text-xs">Explore</h3>
                         <div className="space-y-4">
                             <FooterLink text="About Us" />
@@ -87,22 +86,70 @@ const ContactFooter = () => {
                         </div>
                     </div>
 
+                    {/* Official Channels */}
+                    <div className="md:col-span-3 space-y-6">
+                        <h3 className="text-white font-bold uppercase tracking-widest text-xs">Official Channels</h3>
+                        <div className="space-y-5">
+                            <div className="group">
+                                <a
+                                    href="https://us02web.zoom.us/j/4493997238?pwd=N2p2eXl3ZUFGdUpXS2k1dXUwZHNJZz09"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 text-slate-400 hover:text-amber-500 transition-colors"
+                                >
+                                    <Video size={20} className="text-amber-500" />
+                                    <span className="font-bold text-sm">Zoom Meeting</span>
+                                </a>
+                                <div className="mt-2 ml-8 space-y-1">
+                                    <p className="text-[10px] text-slate-500 font-mono">ID: 449 399 7238</p>
+                                    <p className="text-[10px] text-slate-500 font-mono">PASS: WATCH</p>
+                                </div>
+                            </div>
+
+                            <a
+                                href="https://t.me/newwinesots"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 text-slate-400 hover:text-amber-500 transition-colors"
+                            >
+                                <MessageSquare size={20} className="text-amber-500" />
+                                <div>
+                                    <p className="font-bold text-sm">Telegram Channel</p>
+                                    <p className="text-[10px] text-slate-500">Prophetic updates & news</p>
+                                </div>
+                            </a>
+
+                            <a
+                                href="https://app.waystream.io/newwinesots"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 text-slate-400 hover:text-amber-500 transition-colors"
+                            >
+                                <Radio size={20} className="text-amber-500" />
+                                <div>
+                                    <p className="font-bold text-sm">Waystream</p>
+                                    <p className="text-[10px] text-slate-500">Live audio streaming</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
                     {/* Newsletter */}
-                    <div className="md:col-span-4 space-y-6">
+                    <div className="md:col-span-3 space-y-6">
                         <h3 className="text-white font-bold uppercase tracking-widest text-xs">Stay Connected</h3>
-                        <p className="text-slate-500 text-sm">Subscribe to receive prophetic updates and event notifications straight to your inbox.</p>
+                        <p className="text-slate-500 text-sm">Subscribe to receive prophetic updates and event notifications.</p>
 
                         <form className="relative">
                             <input
                                 type="email"
-                                placeholder="Your email address"
-                                className="w-full bg-white/5 border border-white/10 rounded-full py-3 px-5 text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition-colors text-sm"
+                                placeholder="Your email"
+                                className="w-full bg-white/5 border border-white/10 rounded-full py-2.5 px-4 text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition-colors text-sm"
                             />
                             <button
                                 type="submit"
-                                className="absolute right-1 top-1 bg-amber-500 text-slate-950 p-2 rounded-full hover:bg-amber-400 transition-colors"
+                                className="absolute right-1 top-1 bg-amber-500 text-slate-950 p-1.5 rounded-full hover:bg-amber-400 transition-colors"
                             >
-                                <ArrowRight size={16} />
+                                <ArrowRight size={14} />
                             </button>
                         </form>
                     </div>
