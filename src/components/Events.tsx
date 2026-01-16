@@ -89,7 +89,7 @@ const Events = () => {
         {
             title: "School of the Spirit (SOTS)",
             date: "EVERY MONDAY",
-            location: "Plateau Hotel, Tudun Wada, Jos",
+            location: "Plateau Hotel Novel Suites",
             image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80"
         },
         {

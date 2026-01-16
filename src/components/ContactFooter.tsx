@@ -55,9 +55,7 @@ const ContactFooter = () => {
                             <div className="flex items-start gap-3 text-slate-400">
                                 <MapPin size={20} className="text-amber-500 mt-1 shrink-0" />
                                 <p className="text-sm leading-relaxed">
-                                    Plateau Hotel, <br />
-                                    Tudun Wada, <br />
-                                    Jos, Plateau State, Nigeria
+                                    Plateau Hotel Novel Suites
                                 </p>
                             </div>
                             <div className="flex items-center gap-3 text-slate-400">

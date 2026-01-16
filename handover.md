@@ -10,11 +10,12 @@ This file serves as a state-snapshot to continue the work from another account.
     - **Tagline**: Faith | Prophecy | Miracles.
     - **Vision**: Kingdom prophetic and apostolic equipping platform.
     - **Events**: SOTS (Mondays), I-NWAS (August), Healing Streams (Feb & Sept).
-    - **Contact**: Plateau Hotel, Tudun Wada, Jos.
+- **Contact**: Plateau Hotel Novel Suites.
 
 ## Next Steps
-1.  **Update Components**: Modify `Hero.tsx`, `About.tsx`, `Events.tsx`, and `ContactFooter.tsx` with the extracted data.
-2.  **Verify**: Ensure the styling remains premium and the animations (scroll reveal, etc.) still function correctly with the new content.
+1.  **Gallery**: The `Gallery.tsx` images array has been emptied as requested (images to be replaced).
+2.  **About**: The `About.tsx` section has been made static (animations removed).
+3.  **Deploy**: Push final changes to GitHub.
 
 ## Instructions for New Session
 When you start a new conversation with Antigravity, simply tell it:

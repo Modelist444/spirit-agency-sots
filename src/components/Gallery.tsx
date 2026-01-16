@@ -1,43 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
-const images = [
-    {
-        url: "/images/church_spiritual_worship.png",
-        caption: "A generation rising in deep intimacy and spiritual power.",
-        title: "Divine Worship"
-    },
-    {
-        url: "https://images.unsplash.com/photo-1548625361-02482390885a?q=80&w=1600",
-        caption: "Where the supernatural becomes the normal atmosphere of living.",
-        title: "Sacred Encounters"
-    },
-    {
-        url: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=1600",
-        caption: "Hands extended in love, transforming communities through service.",
-        title: "Faith in Action"
-    },
-    {
-        url: "https://images.unsplash.com/photo-1507434965515-61970f2bd7c6?q=80&w=1600",
-        caption: "Grounded in the Word, led by the Spirit into all truth.",
-        title: "Holy Wisdom"
-    },
-    {
-        url: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?q=80&w=1600",
-        caption: "Built for His glory, a beacon of light in a modern world.",
-        title: "The Sanctuary"
-    },
-    {
-        url: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=1600",
-        caption: "Next generation leaders ignited for global impact.",
-        title: "Youth Ignition"
-    },
-    {
-        url: "https://images.unsplash.com/photo-1445006844190-7082ece5b1bc?w=1600&q=80",
-        caption: "Covenant relationships formed in the heart of God's family.",
-        title: "Kingdom Unity"
-    }
-];
+const images: { url: string; caption: string; title: string; }[] = [];
 
 
 const GalleryItem = ({ image, index, total }: { image: typeof images[0], index: number, total: number }) => {
