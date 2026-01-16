@@ -25,7 +25,7 @@ const Hero = () => {
                     <img
                         src="/new_dove.jpg"
                         alt="Dove"
-                        className="w-48 h-48 md:w-64 md:h-64 object-contain rounded-full shadow-[0_0_60px_rgba(255,255,255,0.2)]"
+                        className="w-48 h-48 md:w-64 md:h-64 object-contain"
                     />
                 </div>
 
