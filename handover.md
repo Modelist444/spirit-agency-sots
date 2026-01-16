@@ -14,8 +14,8 @@ This file serves as a state-snapshot to continue the work from another account.
 
 ## Next Steps
 1.  **Gallery**: The `Gallery.tsx` images array has been emptied as requested (images to be replaced).
-2.  **About**: The `About.tsx` section has been made static (animations removed).
-3.  **Deploy**: Push final changes to GitHub.
+2.  **About**: The `About.tsx` section has been made static and the title updated to **"SPIRIT AGENCY"** with a slide-in animation from left to right.
+3.  **Deploy**: Final changes pushed to GitHub repository.
 
 ## Instructions for New Session
 When you start a new conversation with Antigravity, simply tell it:
