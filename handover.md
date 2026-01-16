@@ -15,7 +15,8 @@ This file serves as a state-snapshot to continue the work from another account.
 ## Next Steps
 1.  **Gallery**: The `Gallery.tsx` images array has been emptied as requested (images to be replaced).
 2.  **About**: The `About.tsx` section has been made static and the title updated to **"SPIRIT AGENCY"** with a slide-in animation from left to right.
-3.  **Deploy**: Final changes pushed to GitHub repository.
+3.  **Hero/Branding**: Removed the "SPIRIT AGENCY" top badge and replaced the dove with a stand-alone image (`/new_dove.jpg`) without circular framing or shadows.
+4.  **Deploy**: Final changes pushed to GitHub repository.
 
 ## Instructions for New Session
 When you start a new conversation with Antigravity, simply tell it:
