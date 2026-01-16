@@ -23,20 +23,10 @@ const Hero = () => {
                     style={{ animation: 'doveFloat 6s ease-in-out infinite' }}
                 >
                     <img
-                        src="/dove.png"
+                        src="/new_dove.jpg"
                         alt="Dove"
-                        className="w-40 h-40 md:w-52 md:h-52 object-contain drop-shadow-[0_0_40px_rgba(252,211,77,0.4)]"
+                        className="w-48 h-48 md:w-64 md:h-64 object-contain rounded-full shadow-[0_0_60px_rgba(255,255,255,0.2)]"
                     />
-                </div>
-
-                {/* Spirit Agency Badge */}
-                <div
-                    className="inline-block mb-4"
-                    style={{ animation: 'fadeInUp 1s ease-out 0.2s both' }}
-                >
-                    <span className="bg-amber-500/20 text-amber-300 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide border border-amber-500/30">
-                        SPIRIT AGENCY
-                    </span>
                 </div>
 
                 {/* Main Title with hand-drawn underline */}
