@@ -95,25 +95,25 @@ const Events = () => {
         {
             title: "International New Wine Apostolic Summit (I-NWAS)",
             date: "AUGUST ANNUALLY",
-            location: "Plateau Hotel, Tudun Wada, Jos",
+            location: "Rayfield, Novel suites, Jos",
             image: "https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?w=800&q=80"
         },
         {
             title: "Healing Streams",
             date: "FEBRUARY & SEPTEMBER",
-            location: "Plateau Hotel, Tudun Wada, Jos",
+            location: "Rayfield, Novel suites, Jos",
             image: "https://images.unsplash.com/photo-1576091160550-217359f4ecf8?w=800&q=80"
         },
         {
-            title: "Prophetic Training",
-            date: "ONGOING",
-            location: "Online & In-Person",
+            title: "Midnight Watch",
+            date: "Tuesdays & Wednesdays",
+            location: "Zoom 11pm",
             image: "https://images.unsplash.com/photo-1445077100181-a33e9ac94db0?w=800&q=80"
         },
         {
-            title: "Prayer & Intercession",
-            date: "WEEKLY",
-            location: "Plateau Hotel, Tudun Wada, Jos",
+            title: "Prayer surges",
+            date: "Monthly",
+            location: "Rayfield, Novel suites Jos",
             image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80"
         }
     ];

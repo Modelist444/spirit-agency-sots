@@ -12,6 +12,14 @@ This file serves as a state-snapshot to continue the work from another account.
     - **Events**: SOTS (Mondays), I-NWAS (August), Healing Streams (Feb & Sept).
 - **Contact**: Plateau Hotel Novel Suites.
 
+### Mobile Preview
+To view the website on a mobile device or externally, use the following link:
+[Mobile Version](https://contradictorily-unerodent-many.ngrok-free.dev)
+
+> [!NOTE]
+> This link is powered by a local tunnel (Ngrok) and will only be accessible while the development server and Ngrok are running on the host machine.
+
+
 ## Next Steps
 1.  **Gallery**: The `Gallery.tsx` images array has been emptied as requested (images to be replaced).
 2.  **About**: The `About.tsx` section has been made static and the title updated to **"SPIRIT AGENCY"** with a slide-in animation from left to right.

@@ -8,12 +8,12 @@ const images = [
         title: "Divine Worship"
     },
     {
-        url: "/images/gallery/moment_2.jpg",
+        url: "/images/gallery/moment_3.jpg",
         caption: "Prophetic declarations echoing through the halls of the Spirit.",
         title: "Prophetic Decree"
     },
     {
-        url: "/images/gallery/moment_3.jpg",
+        url: "/images/gallery/moment_2.jpg",
         caption: "Heartfelt intercession opening the heavens for divine intervention.",
         title: "Deep Intercession"
     },
