@@ -12,19 +12,21 @@ This file serves as a state-snapshot to continue the work from another account.
     - **Events**: SOTS (Mondays), I-NWAS (August), Healing Streams (Feb & Sept).
 - **Contact**: Plateau Hotel Novel Suites.
 
-### Mobile Preview
-To view the website on a mobile device or externally, use the following link:
-[Mobile Version](https://contradictorily-unerodent-many.ngrok-free.dev)
+### Local Development & External Link
+- **Dev Server**: Currently running on [http://localhost:3002](http://localhost:3002) (Ports 3000/3001 were occupied and likely need clearing).
+- **Vite Config**: Fixed `vite.config.cjs` by adding `allowedHosts` to allow the ngrok domain.
+- **ngrok URL**: [https://contradictorily-unerodent-many.ngrok-free.dev](https://contradictorily-unerodent-many.ngrok-free.dev)
 
-> [!NOTE]
-> This link is powered by a local tunnel (Ngrok) and will only be accessible while the development server and Ngrok are running on the host machine.
-
+> [!IMPORTANT]
+> If the link is "offline", ensure:
+> 1. The Vite dev server is running on the correct port (check `npm run dev` output).
+> 2. The ngrok tunnel is pointing to that SPECIFIC port (e.g., `ngrok http 3002`).
+> 3. `taskkill /F /IM ngrok.exe` might be needed to clear old tunnel processes.
 
 ## Next Steps
-1.  **Gallery**: The `Gallery.tsx` images array has been emptied as requested (images to be replaced).
-2.  **About**: The `About.tsx` section has been made static and the title updated to **"SPIRIT AGENCY"** with a slide-in animation from left to right.
-3.  **Hero/Branding**: Removed the "SPIRIT AGENCY" top badge and replaced the dove with a stand-alone image (`/new_dove.jpg`) without circular framing or shadows.
-4.  **Deploy**: Final changes pushed to GitHub repository.
+1.  **Stability**: Ensure the tunnel remains stable; consider a persistent port in `vite.config.cjs`.
+2.  **Gallery**: Images array in `Gallery.tsx` still needs replacement content.
+3.  **Branding**: Verify dove image `/new_dove.jpg` placement.
 
 ## Instructions for New Session
 When you start a new conversation with Antigravity, simply tell it:

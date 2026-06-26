@@ -27,7 +27,7 @@ const FooterLink = ({ text }: { text: string }) => (
 
 const ContactFooter = () => {
     return (
-        <footer id="contact" className="relative bg-slate-950 pt-24 pb-12 overflow-hidden">
+        <footer id="contact" className="relative pt-24 pb-12 overflow-hidden bg-slate-950/90">
             {/* Scrolling Background Ticker */}
             <div className="absolute top-0 left-0 w-full overflow-hidden opacity-5 pointer-events-none select-none">
                 <motion.div
@@ -89,7 +89,7 @@ const ContactFooter = () => {
                     {/* Official Channels */}
                     <div className="md:col-span-3 space-y-6">
                         <h3 className="text-white font-bold uppercase tracking-widest text-xs">Official Channels</h3>
-                        <div className="space-y-5">
+                        <div className="grid grid-cols-1 gap-5">
                             <div className="group">
                                 <a
                                     href="https://us02web.zoom.us/j/4493997238?pwd=N2p2eXl3ZUFGdUpXS2k1dXUwZHNJZz09"
@@ -144,27 +144,49 @@ const ContactFooter = () => {
                                     <p className="text-[10px] text-slate-500">Video teachings & archives</p>
                                 </div>
                             </a>
+
+                            <a
+                                href="https://newineapp.wordpress.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 text-slate-400 hover:text-amber-500 transition-colors"
+                            >
+                                <div className="p-1 bg-slate-800 rounded-md">
+                                    <span className="font-serif text-xs font-bold text-amber-500">W</span>
+                                </div>
+                                <div>
+                                    <p className="font-bold text-sm">New Wine Blog</p>
+                                    <p className="text-[10px] text-slate-500">Articles & resources</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
-                    {/* Newsletter */}
+                    {/* Connect Section */}
                     <div className="md:col-span-3 space-y-6">
-                        <h3 className="text-white font-bold uppercase tracking-widest text-xs">Stay Connected</h3>
-                        <p className="text-slate-500 text-sm">Subscribe to receive prophetic updates and event notifications.</p>
+                        <h3 className="text-white font-bold uppercase tracking-widest text-xs">Connect</h3>
+                        <div className="space-y-4">
+                            <FooterLink text="Giving" />
+                            <FooterLink text="Newsletter" />
+                            <FooterLink text="Volunteer" />
+                        </div>
 
-                        <form className="relative">
-                            <input
-                                type="email"
-                                placeholder="Your email"
-                                className="w-full bg-white/5 border border-white/10 rounded-full py-2.5 px-4 text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition-colors text-sm"
-                            />
-                            <button
-                                type="submit"
-                                className="absolute right-1 top-1 bg-amber-500 text-slate-950 p-1.5 rounded-full hover:bg-amber-400 transition-colors"
-                            >
-                                <ArrowRight size={14} />
-                            </button>
-                        </form>
+                        <div className="pt-4 space-y-4">
+                            <p className="text-slate-500 text-xs">Stay updated with prophetic movements.</p>
+                            <form className="relative">
+                                <input
+                                    type="email"
+                                    placeholder="Your email"
+                                    className="w-full bg-white/5 border border-white/10 rounded-full py-2 px-4 text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition-colors text-xs"
+                                />
+                                <button
+                                    type="submit"
+                                    className="absolute right-1 top-1 bg-amber-500 text-slate-950 p-1 rounded-full hover:bg-amber-400 transition-colors"
+                                >
+                                    <ArrowRight size={12} />
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
 

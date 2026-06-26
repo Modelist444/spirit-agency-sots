@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -16,6 +16,9 @@ function App() {
 
     return (
         <div className="bg-slate-950 text-white min-h-screen relative overflow-hidden cinematic-grain">
+            {/* Spiritual Overlay - Dark gradient for text readability */}
+            <div className="spiritual-overlay" />
+
             {/* Grid Background */}
             <div className="fixed inset-0 grid-background pointer-events-none z-0" />
 

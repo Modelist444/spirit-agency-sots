@@ -1,0 +1,157 @@
+# Thread: Building a Modern Church Website with AI & Vibe Coding 🧵
+
+---
+
+## Tweet 1/14 - The Hook 🎣
+
+I built a premium, cinematic church website for "New Wine School of the Spirit" in just 3 days.
+
+0 wireframes. 300+ AI agent interactions. pure vibe coding.
+
+The result? A spiritual digital experience that feels alive. Here is how I did it 👇
+
+[VIDEO CLIP: 3-4 sec scroll through the Hero and Prophecies section]
+
+---
+
+## Tweet 2/14 - The Vision 🕊️
+
+Church websites are usually... well, a bit dated. 
+
+I wanted to break that mold. I wanted "Cinematic Spiritualism." 
+Dark slate colors, amber glows, grain textures, and smooth-as-butter animations. 
+
+It shouldn't just be a site; it should be an encounter.
+
+---
+
+## Tweet 3/14 - The Tech Stack 💻
+
+Built for speed and aesthetics:
+• React 18 + TypeScript (Safety + Components)
+• Vite (Instant HMR)
+• Tailwind CSS (Rapid styling)
+• Framer Motion (The magic sauce for animations)
+• Lucide React (Clean icons)
+
+---
+
+## Tweet 4/14 - Day 1: The Soul of the Site 🏗️
+
+Started with the layout. No templates here. 
+
+Used a `slate-950` basement with custom "Edge Glows" and a "Cinematic Grain" overlay. It gives the screen a physical, textured feeling.
+
+Added a custom "Particles" background to represent the movement of the Spirit. 🌬️
+
+[VIDEO CLIP: Show VSCode with App.tsx and the CSS glow effects]
+
+---
+
+## Tweet 5/14 - The "Vibe Coding" Workflow ✨
+
+What is vibe coding? 
+It's describing the *feeling* to the AI and iterating until it clicks. 
+
+"Make that button feel like it's glowing from within." 
+"Add a tilt effect to these cards so they respond to the mouse like they're floating."
+
+The AI writes the math; I curate the emotion.
+
+---
+
+## Tweet 6/14 - The "Heaven Frequency" 📡
+
+Created a unique "Prophecies" section. 
+
+Used 3D coin-flip rotations and mouse-tracking tilt effects for the prophetic cards. Each card has a subtle pulse and a glassmorphism blur that looks elite.
+
+This is where the Framer Motion library really flexed. 🎭
+
+---
+
+## Tweet 7/14 - Day 2: Content & Structure 📅
+
+Implemented the heart of the school:
+• Hero section with a floating Menorah 🕎
+• Animated Event cards
+• Prayer Request system
+• Gallery with spotlight hover states
+
+Everything is responsive. Mobile feels just as premium as desktop.
+
+---
+
+## Tweet 8/14 - Challenge: The "Menorah" Balance ⚖️
+
+I wanted a floating Menorah in the background, but it kept distracting from the text. 
+
+Solved it by:
+1. Setting opacity to `0.03`
+2. Adding a 20s "Gentle Float" animation
+3. Using an ultra-large font size (250px)
+
+Subtle, powerful, present.
+
+---
+
+## Tweet 9/14 - Day 3: Polish & "The Blur" 🪄
+
+Spent the final day on the "Micro-interactions."
+
+Every scroll, every hover, and every button click has a feedback loop. 
+If the user interacts with it, it should feel like it's responding to them in real-time.
+
+---
+
+## Tweet 10/14 - The Tools 🛠️
+
+I called in the reinforcements:
+• Claude (for complex UI logic)
+• VSCode (home base)
+• ChatGPT (for prompt engineering)
+• 300+ Agent interactions to refine every single component.
+
+Building in public meant I had specialized "agents" helping me debug Tailwind or Framer Motion edge cases.
+
+---
+
+## Tweet 11/14 - Deployment 🚀
+
+Moved from my local machine to the world.
+Used Vite's build process to optimize images and bundle the code. 
+
+Result? 99% Lighthouse score for performance. ⚡️
+
+[VIDEO CLIP: Shows the site running live with the smooth animations]
+
+---
+
+## Tweet 12/14 - What I Learned 🎓
+
+1. Vision is the most important asset.
+2. AI doesn't replace the dev; it empowers the Curator.
+3. Don't fear the "Vibe" – intuition-led development is faster and more creative.
+4. Feedback loops are everything.
+
+---
+
+## Tweet 13/14 - The Final Results 👑
+
+New Wine School of the Spirit is now live. 
+
+It’s a platform for prophecy, apostolic equipping, and Kingdom transformation. 
+
+Big shoutout to coordinator Babs Adewunmi for the vision. 🤝
+
+---
+
+## Tweet 14/14 - Want to Build Like This? 🦾
+
+Building with AI and "Vibe Coding" is the future of web dev.
+
+Drop a 🔥 if you want me to share the "Style System" I used for this cinematic look.
+
+Let’s build something beautiful. 
+
+#WebDev #AI #VibeCoding #ReactJS #TailwindCSS #ChurchWeb #SpiritualTech

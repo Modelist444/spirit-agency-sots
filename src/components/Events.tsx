@@ -1,85 +1,92 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
+import { MouseEvent } from 'react';
 
 const EventCard = ({
     title,
     date,
     location,
-    image,
-    index
+    image
 }: {
     title: string;
     date: string;
     location: string;
     image: string;
-    index: number;
 }) => {
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
+        const { left, top } = currentTarget.getBoundingClientRect();
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
+    }
+
     return (
         <motion.div
-            initial={{
-                opacity: 0,
-                scale: 0.9,
-                y: 30,
-                x: (index % 2 === 0 ? -100 : 100) // Default to slide-in, rely on viewport checks or responsive styles
+            variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
             }}
-            whileInView={{
-                opacity: 1,
-                scale: 1,
-                y: 0,
-                x: 0
-            }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{
-                duration: 0.8,
-                delay: index * 0.1,
-                ease: [0.215, 0.61, 0.355, 1]
-            }}
-            whileHover={{ y: -10 }}
-            className="group relative bg-slate-900/40 backdrop-blur-md rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-500 overflow-hidden"
+            onMouseMove={handleMouseMove}
+            className="group relative bg-slate-900/40 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden active:scale-[0.98] transition-all duration-500"
         >
+            {/* Spotlight Effect */}
+            <motion.div
+                className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100"
+                style={{
+                    background: useMotionTemplate`
+                        radial-gradient(
+                            650px circle at ${mouseX}px ${mouseY}px,
+                            rgba(245, 158, 11, 0.15),
+                            transparent 80%
+                        )
+                    `,
+                }}
+            />
+
             <div className="h-48 overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10 opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/20 to-transparent z-10" />
+
+                {/* Image with slight zoom scale */}
                 <motion.img
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.8 }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
                     src={image}
                     alt={title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
                 />
+
                 <div className="absolute top-4 left-4 z-20">
-                    <span className="bg-amber-500 text-slate-950 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-lg shadow-amber-500/20">
+                    <span className="bg-amber-500/90 backdrop-blur-sm text-slate-950 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.3)]">
                         Upcoming
                     </span>
                 </div>
             </div>
 
-            <div className="p-6 relative">
-                <div className="flex items-center gap-2 text-amber-500/80 text-xs font-bold uppercase tracking-widest mb-3">
-                    <Calendar size={14} />
+            <div className="p-6 relative z-10">
+                <div className="flex items-center gap-2 text-amber-500 text-xs font-bold uppercase tracking-widest mb-3">
+                    <Calendar size={14} className="text-amber-500" />
                     {date}
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-amber-400 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-amber-400 transition-colors leading-snug">
                     {title}
                 </h3>
 
-                <div className="flex items-center gap-2 text-slate-400 text-sm mb-6">
+                <div className="flex items-center gap-2 text-slate-400 text-sm mb-6 border-b border-white/5 pb-6">
                     <MapPin size={14} />
                     {location}
                 </div>
 
                 <motion.button
-                    whileHover={{ x: 5 }}
-                    className="flex items-center gap-2 text-amber-500 text-xs font-black uppercase tracking-widest group/link"
+                    whileHover={{ x: 4 }}
+                    className="flex items-center gap-2 text-white/90 text-xs font-black uppercase tracking-widest group/link hover:text-amber-500 transition-colors"
                 >
                     Learn More
-                    <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                    <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform text-amber-500" />
                 </motion.button>
             </div>
-
-            {/* Animated border glow on hover */}
-            <div className="absolute inset-0 border-2 border-amber-500/0 group-hover:border-amber-500/20 rounded-2xl transition-all duration-500 pointer-events-none" />
         </motion.div>
     );
 };
@@ -120,7 +127,10 @@ const Events = () => {
 
     return (
         <section id="events" className="py-24 px-4 relative z-20">
-            <div className="max-w-6xl mx-auto">
+            {/* Background elements for depth */}
+            <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="max-w-6xl mx-auto relative">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -129,7 +139,7 @@ const Events = () => {
                 >
                     <div className="max-w-2xl">
                         <p className="text-amber-500 font-black uppercase tracking-[0.4em] text-[10px] mb-4">Mark Your Calendar</p>
-                        <h2 className="text-4xl md:text-6xl font-black text-white leading-tight">
+                        <h2 className="text-4xl md:text-5xl font-black text-white leading-tight pb-1">
                             Key <span className="text-slate-500">Encounters</span> & Events
                         </h2>
                     </div>
@@ -142,11 +152,23 @@ const Events = () => {
                     </motion.button>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-10%" }}
+                    variants={{
+                        visible: {
+                            transition: {
+                                staggerChildren: 0.1
+                            }
+                        }
+                    }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
                     {events.map((e, i) => (
-                        <EventCard key={i} {...e} index={i} />
+                        <EventCard key={i} {...e} />
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

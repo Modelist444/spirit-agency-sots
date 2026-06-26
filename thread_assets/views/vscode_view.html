@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSCode Capture - Prophecies.tsx</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1e1e1e;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            color: #d4d4d4;
+            overflow: hidden;
+        }
+
+        .window {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 50px;
+            background: #333333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+            border-right: 1px solid #1e1e1e;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 20px;
+            opacity: 0.6;
+            filter: invert(1);
+        }
+
+        .explorer {
+            width: 250px;
+            background: #252526;
+            border-right: 1px solid #1e1e1e;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .explorer-header {
+            padding: 10px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #bbbbbb;
+            text-transform: uppercase;
+        }
+
+        .file-list {
+            padding-left: 0;
+            margin: 0;
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .file-item {
+            padding: 5px 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: #cccccc;
+        }
+
+        .file-item:hover {
+            background: #2a2d2e;
+        }
+
+        .file-item.active {
+            background: #37373d;
+            color: #ffffff;
+        }
+
+        .file-icon {
+            margin-right: 8px;
+            width: 14px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .editor-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tabs {
+            display: flex;
+            background: #252526;
+            height: 35px;
+        }
+
+        .tab {
+            padding: 8px 15px;
+            background: #1e1e1e;
+            color: #ffffff;
+            font-size: 13px;
+            border-top: 2px solid #007acc;
+            display: flex;
+            align-items: center;
+        }
+
+        .tab.inactive {
+            background: #2d2d2d;
+            border-top: 2px solid transparent;
+            color: #969696;
+        }
+
+        .breadcrumbs {
+            padding: 5px 20px;
+            font-size: 12px;
+            color: #969696;
+            background: #1e1e1e;
+        }
+
+        .code-container {
+            flex: 1;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .line-numbers {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 50px;
+            text-align: right;
+            padding-right: 15px;
+            color: #858585;
+            font-size: 14px;
+            line-height: 24px;
+            background: #1e1e1e;
+            user-select: none;
+        }
+
+        .code-content {
+            margin-left: 60px;
+            font-size: 14px;
+            line-height: 24px;
+            white-space: pre;
+        }
+
+        .k {
+            color: #569cd6;
+        }
+
+        /* keyword */
+        .s {
+            color: #ce9178;
+        }
+
+        /* string */
+        .c {
+            color: #6a9955;
+        }
+
+        /* comment */
+        .f {
+            color: #dcdcaa;
+        }
+
+        /* function */
+        .t {
+            color: #4ec9b0;
+        }
+
+        /* type/class */
+        .v {
+            color: #9cdcfe;
+        }
+
+        /* variable */
+        .n {
+            color: #b5cea8;
+        }
+
+        /* number */
+    </style>
+</head>
+
+<body>
+    <div class="window">
+        <div class="sidebar">
+            <div class="icon">📄</div>
+            <div class="icon">🔍</div>
+            <div class="icon">🌳</div>
+        </div>
+        <div class="explorer">
+            <div class="explorer-header">Explorer: CHURCH WEBSITE</div>
+            <ul class="file-list">
+                <li class="file-item"><span class="file-icon">📁</span> components</li>
+                <li class="file-item active"><span class="file-icon">⚛️</span> Prophecies.tsx</li>
+                <li class="file-item"><span class="file-icon">⚛️</span> Hero.tsx</li>
+                <li class="file-item"><span class="file-icon">⚛️</span> App.tsx</li>
+                <li class="file-item"><span class="file-icon">🎨</span> index.css</li>
+            </ul>
+        </div>
+        <div class="editor-area">
+            <div class="tabs">
+                <div class="tab">Prophecies.tsx <span style="margin-left:8px">×</span></div>
+                <div class="tab inactive">Hero.tsx</div>
+            </div>
+            <div class="breadcrumbs">
+                src > components > Prophecies.tsx > ProphecyCard
+            </div>
+            <div class="code-container">
+                <div class="line-numbers">
+                    4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18
+                </div>
+                <div class="code-content"><span class="k">const</span> <span class="f">ProphecyCard</span> = ({ title,
+                    content, color, index }) => {
+                    <span class="c">// 3D Tilt Logic using Framer Motion</span>
+                    <span class="k">const</span> <span class="v">x</span> = <span class="f">useMotionValue</span>(<span
+                        class="n">0</span>);
+                    <span class="k">const</span> <span class="v">y</span> = <span class="f">useMotionValue</span>(<span
+                        class="n">0</span>);
+
+                    <span class="k">const</span> <span class="v">rotateX</span> = <span
+                        class="f">useTransform</span>(<span class="v">mouseYSpring</span>, [-<span class="n">0.5</span>,
+                    <span class="n">0.5</span>], [<span class="s">"10deg"</span>, <span class="s">"-10deg"</span>]);
+                    <span class="k">const</span> <span class="v">rotateY</span> = <span
+                        class="f">useTransform</span>(<span class="v">mouseXSpring</span>, [-<span class="n">0.5</span>,
+                    <span class="n">0.5</span>], [<span class="s">"-10deg"</span>, <span class="s">"10deg"</span>]);
+
+                    <span class="k">return</span> (
+                    <span class="t">&lt;motion.div</span>
+                    <span class="v">style</span>={{ rotateX, rotateY, transformStyle: <span
+                        class="s">"preserve-3d"</span> }}
+                    <span class="v">className</span>=<span class="s">"group relative perspective-1000"</span>
+                    <span class="t">&gt;</span>
+                    <span class="c">{/* Animated Glowing Border */}</span>
+                    <span class="t">&lt;div</span> <span class="v">className</span>=<span class="s">"absolute -inset-0.5
+                        rounded-2xl opacity-70 blur-[2px]"</span> <span class="t">/&gt;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

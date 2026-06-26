@@ -1,11 +1,6 @@
-import React from 'react';
-import { Calendar, Play, Heart, Send, ChevronDown, Video } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
-    const scrollToSection = (section: string) => {
-        document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
-    };
-
     return (
         <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
             {/* Floating Menorah - more subtle */}
@@ -17,20 +12,11 @@ const Hero = () => {
             </div>
 
             <div className="text-center z-20 px-4 max-w-5xl mx-auto space-y-6">
-                {/* Floating Dove - using uploaded image */}
-                <div
-                    className="inline-block"
-                    style={{ animation: 'doveFloat 6s ease-in-out infinite' }}
-                >
-                    <img
-                        src="/new_dove.jpg"
-                        alt="Dove"
-                        className="w-48 h-48 md:w-64 md:h-64 object-contain"
-                    />
-                </div>
 
-                {/* Main Title with hand-drawn underline */}
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-4">
+
+
+
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 leading-[1.1] pb-2 pr-2 uppercase italic overflow-visible">
                     <span className="text-white">Welcome to </span>
                     <span className="underline-sketch bg-gradient-to-r from-amber-300 via-amber-400 to-amber-300 bg-clip-text text-transparent">
                         New Wine
@@ -52,23 +38,15 @@ const Hero = () => {
                     Faith • Prophecy • Miracles
                 </p>
 
-                {/* Scripture Quote */}
+                {/* Mission Statement Box */}
                 <div
-                    className="max-w-3xl mx-auto bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-amber-500/20"
+                    className="max-w-3xl mx-auto bg-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-amber-500/20"
                     style={{ animation: 'fadeInUp 1s ease-out 0.6s both' }}
                 >
-                    <p className="text-lg md:text-xl text-amber-100/90 italic leading-relaxed">
-                        "But the hour is coming, and is now here, when the true worshipers will worship the Father in spirit and truth"
+                    <p className="text-xl md:text-2xl text-amber-100/90 font-medium leading-relaxed italic">
+                        "A Kingdom prophetic and apostolic equipping platform. Come encounter the presence of God, be transformed by His Spirit, and discover your divine purpose."
                     </p>
-                    <p className="text-sm text-slate-500 mt-2">— John 4:23</p>
                 </div>
-
-                <p
-                    className="text-base md:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
-                    style={{ animation: 'fadeInUp 1s ease-out 1s both' }}
-                >
-                    A Kingdom prophetic and apostolic equipping platform. Come encounter the presence of God, be transformed by His Spirit, and discover your divine purpose.
-                </p>
 
                 {/* Coordinator */}
                 <p
@@ -77,41 +55,6 @@ const Hero = () => {
                 >
                     Coordinated by <span className="text-amber-400/70">Babs Adewunmi</span>
                 </p>
-
-                {/* Action Buttons */}
-                <div
-                    className="flex flex-wrap justify-center gap-3 md:gap-4 pt-4"
-                    style={{ animation: 'fadeInUp 1s ease-out 1.2s both' }}
-                >
-                    <a
-                        href="https://us02web.zoom.us/j/4493997238?pwd=N2p2eXl3ZUFGdUpXS2k1dXUwZHNJZz09"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 flex items-center gap-2 font-bold bg-white text-slate-900 shadow-xl hover:bg-amber-400 hover:scale-105 active:scale-95 border-2 border-white/20"
-                    >
-                        <Video size={20} className="group-hover:animate-pulse" />
-                        <span>JOIN LIVE NOW</span>
-                    </a>
-
-                    {[
-                        { icon: Calendar, text: 'Events', action: 'events', primary: true },
-                        { icon: Play, text: 'Sermons', action: 'sermons', primary: false },
-                        { icon: Heart, text: 'Testimonies', action: 'testimonies', primary: false },
-                        { icon: Send, text: 'Prayer', action: 'prayer', primary: false }
-                    ].map((btn, i) => (
-                        <button
-                            key={i}
-                            onClick={() => scrollToSection(btn.action)}
-                            className={`group px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 flex items-center gap-2 font-medium ${btn.primary
-                                ? 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-900 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105'
-                                : 'bg-slate-800/80 border border-slate-700 hover:border-amber-500/50 hover:bg-slate-800 text-slate-200 hover:text-amber-200'
-                                }`}
-                        >
-                            <btn.icon size={18} className="group-hover:scale-110 transition-transform" />
-                            <span>{btn.text}</span>
-                        </button>
-                    ))}
-                </div>
             </div>
 
             {/* Scroll indicator */}

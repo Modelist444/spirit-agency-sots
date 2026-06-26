@@ -1,0 +1,37 @@
+QUICK SCREENSHOT GUIDE - Church Website "Real" Visuals
+======================================================
+
+I have prepared the following views for you to screenshot!
+
+STEP 1: THE WEBSITE (Tweet 1 & 11)
+----------------------------------
+1. In your browser, open: C:\Users\USA\Documents\church website\index.html
+   (Or run 'npm run dev' and open the local URL)
+2. Press: Win + Shift + S
+3. Capture the Hero section and the scrolling animations.
+
+STEP 2: VSCODE CODEBASE (Tweet 4 & 6)
+-------------------------------------
+1. Open: C:\Users\USA\Documents\church website\thread_assets\views\vscode_view.html
+2. Press: Win + Shift + S
+3. Capture the "Prophecies.tsx" code view.
+
+STEP 3: DEPLOYMENT LOGS (Tweet 11)
+----------------------------------
+1. Open: C:\Users\USA\Documents\church website\thread_assets\views\deploy_view.html
+2. Press: Win + Shift + S
+3. Capture the Vite build and Vercel deployment logs.
+
+STEP 4: AI AGENT STATS (Tweet 10)
+---------------------------------
+1. Open: C:\Users\USA\Documents\church website\thread_assets\views\agent_view.html
+2. Press: Win + Shift + S
+3. Capture the "300+ Agent interactions" card.
+
+======================================================
+FILES CREATED:
+- twitter_thread.md (Full 14-tweet plan)
+- twitter_thread.txt (Copy-paste version)
+- thread_assets/views (Visual assets ready to snapshot)
+
+Good luck with the thread! 🕊️✨

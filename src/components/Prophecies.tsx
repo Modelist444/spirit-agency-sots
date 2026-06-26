@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Zap, Eye, Radio, Sparkles } from 'lucide-react';
 
@@ -82,8 +81,7 @@ const ProphecyCard = ({
                     ease: "linear",
                 },
                 opacity: { duration: 0.8 },
-                rotateX: { type: "spring", stiffness: 300, damping: 30 },
-                rotateY: { type: "spring", stiffness: 300, damping: 30 }
+                rotateX: { type: "spring", stiffness: 300, damping: 30 }
             }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
@@ -142,23 +140,23 @@ const Prophecies = () => {
     ];
 
     return (
-        <section id="prophesies" className="py-24 px-4 relative z-20 bg-slate-950 overflow-hidden">
+        <section id="prophesies" className="py-24 px-4 relative z-20 overflow-hidden">
             {/* Grid background extension */}
             <div className="absolute inset-0 grid-background opacity-20 pointer-events-none" />
 
             <div className="max-w-6xl mx-auto">
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-20 text-left relative"
+                    className="mb-12 md:mb-20 text-left relative"
                 >
-                    <div className="absolute -left-12 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-500 via-fuchsia-500 to-amber-500 opacity-50 blur-[2px]" />
-                    <h2 className="text-5xl md:text-7xl font-black text-white italic tracking-tighter uppercase leading-[0.8]">
+                    <div className="hidden md:block absolute -left-12 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-500 via-fuchsia-500 to-amber-500 opacity-50 blur-[2px]" />
+                    <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white italic tracking-tight uppercase leading-tight pb-8 overflow-visible">
                         Heaven<br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-amber-400 animate-shimmer bg-[length:200%_auto]">Frequency</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-amber-400 animate-shimmer bg-[length:200%_auto] inline-block pb-2">Frequency</span>
                     </h2>
-                    <p className="mt-4 text-slate-500 font-bold uppercase tracking-[0.3em] text-xs">Prophetic Declarations / Year 2024</p>
+                    <p className="mt-4 text-slate-500 font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs">Prophetic Declarations / Year 2024</p>
                 </motion.div>
 
                 <div className="grid md:grid-cols-3 gap-10">

@@ -118,7 +118,7 @@ const Sermons = () => {
                     <p className="text-amber-400 font-semibold tracking-widest uppercase text-sm mb-4">
                         Watch & Learn
                     </p>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4">
+                    <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight pb-1">
                         Featured <span className="text-amber-400">Sermons</span>
                     </h2>
                     <p className="text-slate-400 max-w-2xl mx-auto">
@@ -127,7 +127,7 @@ const Sermons = () => {
                 </motion.div>
 
                 {/* Sermon Cards Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {sermons.map((sermon, i) => (
                         <FeatureCard
                             key={i}

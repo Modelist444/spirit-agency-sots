@@ -4,13 +4,86 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Unified Design System Variables */
+:root {
+  --section-padding: 6rem;
+  --section-gap: 0;
+  --transition-duration: 0.8s;
+  --transition-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth, contemplative scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global typography fix for descender clipping */
 * {
   font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  padding-bottom: 0.15em;
+  overflow: visible;
+}
+
+/* Prevent descender clipping on italic and display text */
+.italic,
+[class*="italic"] {
+  padding-right: 0.1em;
+  padding-bottom: 0.1em;
+}
+
+/* Unified section styling */
+section {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
 }
 
 @layer utilities {
   .cinematic-grain {
     position: relative;
+  }
+
+  .cinematic-grain::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* =========================================================================
+       BACKDROP ARCHIVE - Choose your theme by uncommenting one block below
+       ========================================================================= */
+
+    /* --- OPTION 1: SLATE GLORY (The "Professional Merged" Look) --- */
+    /*
+    background-image:
+      linear-gradient(to bottom,
+        rgba(2, 6, 23, 0.4) 0%,
+        rgba(2, 6, 23, 0.85) 50%,
+        rgba(2, 6, 23, 0.98) 100%),
+      url('/spiritual-background.jpg');
+    */
+
+    /* --- OPTION 2: NEW WINE VIBRANCE (Lighter Version) --- */
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.1)),
+      url('/global-theme-bg.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 0;
+    pointer-events: none;
   }
 
   .cinematic-grain::after {
@@ -21,10 +94,16 @@
     width: 300%;
     height: 300%;
     background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-    opacity: 0.04;
+    opacity: 0.045;
     pointer-events: none;
     z-index: 99;
-    animation: grain 8s steps(10) infinite;
+    animation: grain 10s steps(8) infinite;
+  }
+
+  @media (max-width: 768px) {
+    .cinematic-grain::after {
+      opacity: 0.03;
+    }
   }
 
   @keyframes grain {
@@ -82,34 +161,45 @@
     background-size: 100% 100%;
   }
 
-  /* ========================================
-     SERMON CARD SHARED STYLES
-     All sermon titles MUST use these classes
-     ======================================== */
-  .sermon-card-title {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.4;
-    color: white;
-    margin-bottom: 8px;
+  /* Atmospheric gradient overlay for text readability */
+  .spiritual-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+        rgba(15, 15, 25, 0.75) 0%,
+        rgba(20, 15, 35, 0.65) 20%,
+        rgba(25, 20, 40, 0.55) 50%,
+        rgba(20, 15, 35, 0.65) 80%,
+        rgba(15, 15, 25, 0.75) 100%);
+    pointer-events: none;
+    z-index: 1;
   }
 
-  .sermon-card-preacher {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.5;
-    color: rgba(251, 191, 36, 0.8);
+  /* Glass morphism containers */
+  .glass-container {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
   }
 
-  .sermon-card-tag {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1;
-    padding: 4px 12px;
-    background: rgba(30, 41, 59, 0.8);
-    color: rgb(203, 213, 225);
-    border-radius: 9999px;
-    border: 1px solid rgba(71, 85, 105, 0.5);
+  .glass-container-strong {
+    background: rgba(15, 15, 25, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+  }
+
+  /* Subtle glow for spiritual purple-pink tones */
+  .spiritual-glow {
+    box-shadow:
+      0 0 30px rgba(168, 85, 247, 0.15),
+      0 0 60px rgba(236, 72, 153, 0.1);
   }
 }
 
@@ -313,4 +403,61 @@
 
 .perspective-1000 {
   perspective: 1000px;
+}
+
+@keyframes spiritPassage {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(100vw, 0, 0);
+  }
+}
+
+.animate-spirit-passage {
+  animation-name: spiritPassage;
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite !important;
+  animation-fill-mode: both;
+  animation-play-state: running !important;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+@media (max-width: 1024px) {
+  .animate-spirit-passage {
+    animation-duration: 15s;
+    font-size: clamp(3rem, 15vw, 6rem) !important;
+  }
+}
+
+/* Sermon Card Styles */
+.sermon-card-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sermon-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.sermon-card-preacher {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
 }

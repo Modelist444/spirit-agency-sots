@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MagneticDock, type DockItemData } from './MagneticDock';
 
 interface NavbarProps {
     activeSection: string;
@@ -12,64 +14,90 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
     const scrollToSection = (section: string) => {
         setActiveSection(section);
         setMenuOpen(false);
-        document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+        const element = document.getElementById(section);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     const navItems = ['home', 'about', 'testimonies', 'prophesies', 'prayer', 'events', 'sermons', 'contact'];
+
+    const dockItems: DockItemData[] = navItems.map(section => ({
+        id: section,
+        label: section,
+        isActive: activeSection === section,
+        onClick: () => scrollToSection(section),
+    }));
 
     return (
         <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16 md:h-20">
-                    <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => scrollToSection('home')}>
-                        <div className="text-3xl transition-transform duration-300 group-hover:scale-110">
+                    <motion.div
+                        className="flex items-center space-x-3 group cursor-pointer"
+                        onClick={() => scrollToSection('home')}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                    >
+                        <motion.div
+                            className="text-3xl"
+                            whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
+                        >
                             🕎
-                        </div>
+                        </motion.div>
                         <div>
-                            <h1 className="text-lg font-bold text-white">
+                            {/* Added padding-right/bottom to prevent clipping of the 'e' in Wine */}
+                            <h1 className="text-lg font-bold text-white leading-none pr-1 pb-0.5 whitespace-nowrap">
                                 New Wine <span className="text-amber-400">SOTS</span>
                             </h1>
-                            <p className="text-[10px] text-slate-500 uppercase tracking-widest">School of the Spirit</p>
+                            <p className="text-[10px] text-slate-500 uppercase tracking-[0.2em] pt-1 whitespace-nowrap">School of the Spirit</p>
                         </div>
-                    </div>
+                    </motion.div>
 
                     <button
                         onClick={() => setMenuOpen(!menuOpen)}
-                        className="lg:hidden text-slate-400 p-2 hover:text-amber-400 transition-colors"
+                        className="lg:hidden text-slate-400 p-2 hover:text-amber-400 transition-colors z-50"
                     >
                         {menuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
 
-                    <div className="hidden lg:flex items-center space-x-1">
-                        {navItems.map(section => (
-                            <button
-                                key={section}
-                                onClick={() => scrollToSection(section)}
-                                className={`px-4 py-2 rounded-lg transition-all duration-200 capitalize text-sm font-medium ${activeSection === section
-                                    ? 'text-amber-400 bg-amber-500/10'
-                                    : 'text-slate-400 hover:text-white hover:bg-slate-800'
-                                    }`}
-                            >
-                                {section}
-                            </button>
-                        ))}
+                    <div className="hidden lg:flex items-center">
+                        <MagneticDock 
+                            items={dockItems} 
+                            variant="transparent" 
+                            maxScale={1.18} 
+                            magneticDistance={60}
+                        />
                     </div>
                 </div>
             </div>
 
-            {menuOpen && (
-                <div className="lg:hidden bg-slate-950/95 backdrop-blur-xl border-t border-slate-800 animate-slideDown">
-                    {navItems.map(section => (
-                        <button
-                            key={section}
-                            onClick={() => scrollToSection(section)}
-                            className="block w-full text-left px-6 py-3 text-slate-400 hover:bg-slate-800 hover:text-amber-400 capitalize transition-all text-sm font-medium"
-                        >
-                            {section}
-                        </button>
-                    ))}
-                </div>
-            )}
+            <AnimatePresence>
+                {menuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="lg:hidden fixed inset-x-0 top-[64px] bg-slate-950/98 backdrop-blur-2xl border-t border-slate-800 overflow-hidden"
+                    >
+                        <div className="flex flex-col p-6 space-y-2">
+                            {navItems.map((section, i) => (
+                                <motion.button
+                                    key={section}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: i * 0.05 }}
+                                    onClick={() => scrollToSection(section)}
+                                    className="w-full text-left px-6 py-4 text-slate-300 hover:bg-slate-800 hover:text-amber-400 capitalize transition-all text-lg font-bold border border-transparent hover:border-amber-500/20 rounded-xl"
+                                >
+                                    {section}
+                                </motion.button>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };

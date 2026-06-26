@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } from 'framer-motion';
 import { Send, Sparkles } from 'lucide-react';
 
 const CrystallineFacet = ({ delay, rotate, color }: { delay: number; rotate: number; color: string }) => {
@@ -54,7 +54,7 @@ const PrayerRequest = () => {
     };
 
     return (
-        <section id="prayer" className="py-24 px-4 relative z-20 overflow-hidden bg-slate-950">
+        <section id="prayer" className="py-24 px-4 relative z-20 overflow-hidden">
             {/* Background Geometric Pattern */}
             <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -74,7 +74,7 @@ const PrayerRequest = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">
+                    <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight pb-1">
                         Crystalline <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Intercession</span>
                     </h2>
                     <p className="text-slate-400 uppercase tracking-[0.4em] text-xs font-bold">Submit Your Prayer Requests</p>
@@ -105,10 +105,7 @@ const PrayerRequest = () => {
                         <motion.div
                             className="absolute inset-0 pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity duration-700"
                             style={{
-                                background: useTransform(
-                                    [lightX, lightY],
-                                    ([x, y]) => `radial-gradient(circle at ${x} ${y}, rgba(255,255,255,0.4) 0%, transparent 60%)`
-                                )
+                                background: useMotionTemplate`radial-gradient(circle at ${lightX} ${lightY}, rgba(255,255,255,0.4) 0%, transparent 60%)`
                             }}
                         />
 

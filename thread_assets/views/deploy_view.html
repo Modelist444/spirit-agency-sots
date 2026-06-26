@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite Build & Deploy</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0c0c0c;
+            color: #cccccc;
+            font-family: 'Cascadia Code', 'Consolas', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .prompt {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .path {
+            color: #4ec9b0;
+        }
+
+        .cmd {
+            color: #ce9178;
+        }
+
+        .log {
+            margin-bottom: 4px;
+        }
+
+        .success {
+            color: #6a9955;
+            font-weight: bold;
+        }
+
+        .info {
+            color: #569cd6;
+        }
+
+        .dim {
+            color: #666;
+        }
+
+        .highlight {
+            color: #e5e510;
+        }
+
+        .progress-bar {
+            color: #6a9955;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="prompt">
+        <span class="path">C:\Users\USA\Documents\church website></span> <span class="cmd">npm run build</span>
+    </div>
+
+    <div class="log">> church-website@0.1.0 build</div>
+    <div class="log">> tsc && vite build</div>
+    <div class="log"><br></div>
+    <div class="log"><span class="info">vite v5.0.0</span> <span class="success">building for production...</span></div>
+    <div class="log"><span class="dim">transforming (248) index.html</span></div>
+    <div class="log"><span class="success">✓</span> 252 modules transformed.</div>
+    <div class="log"><br></div>
+    <div class="log">dist/index.html 0.45 kB</div>
+    <div class="log">dist/assets/index-D4b2xZ0.css 42.12 kB │ gzip: 10.45 kB</div>
+    <div class="log">dist/assets/index-C9a1yW1.js 184.56 kB │ gzip: 56.12 kB</div>
+    <div class="log"><br></div>
+    <div class="log"><span class="success">✨ built in 2.45s</span></div>
+    <div class="log"><br></div>
+
+    <div class="prompt">
+        <span class="path">C:\Users\USA\Documents\church website></span> <span class="cmd">npx vercel --prod</span>
+    </div>
+    <div class="log">Vercel CLI 32.5.0</div>
+    <div class="log"><span class="info">?</span> Set up and deploy “~/Documents/church website”? [Y/n] y</div>
+    <div class="log"><span class="info">?</span> Which scope do you want to deploy to? New Wine School</div>
+    <div class="log"><span class="info">?</span> Link to existing project? [y/N] n</div>
+    <div class="log"><br></div>
+    <div class="log">Deploying to <span class="highlight">new-wine-school.vercel.app</span></div>
+    <div class="log">Inspect: https://vercel.com/new-wine-school/deployments/...</div>
+    <div class="log"><br></div>
+    <div class="log"><span class="success">✅ Production: https://new-wine-school.vercel.app</span> [2s]</div>
+    <div class="log"><br></div>
+    <div class="log"><span class="progress-bar">_</span></div>
+</body>
+
+</html>
